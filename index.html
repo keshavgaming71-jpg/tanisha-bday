@@ -123,7 +123,7 @@ h3{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-s
     <div class="sub">Only for you 🤍</div>
     <div>
       <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
-     
+      <div class="msg" id="msg">Hint: bas 4 digits 💭</div>
       <div class="pad" id="pad"></div>
     </div>
   </section>
@@ -198,7 +198,7 @@ function show(id){
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{hearts(e.clientX,e.clientY);show(b.dataset.go)}));
 // password gate
 let code='',locked=false;
-const dots=[...document.querySelectorAll('#dots i')],msg=$('msg');
+const dots=[...document.querySelectorAll('#dots i')],msg=$('msg')||{};
 [1,2,3,4,5,6,7,8,9,'',0,'⌫'].forEach(k=>{
   const b=document.createElement('button');b.type='button';
   if(k==='')b.className='e';else{b.textContent=k;b.setAttribute('aria-label',k==='⌫'?'delete':k);if(k==='⌫')b.className='x';}
